@@ -1,6 +1,6 @@
 # DJ Sage Bot
 
-**DJ Sage** is a powerful Discord bot built using Java and JDA (Java Discord API). It offers a variety of commands for server moderation, fun activities, event management, user analytics, and more.
+**DJ Sage** is a simple Discord bot built using Java and JDA (Java Discord API). It offers a some common  commands for server moderation, fun activities, event management, user analytics, and more.
 
 ## Features
 
