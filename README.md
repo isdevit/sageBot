@@ -1,134 +1,54 @@
 # DJ Sage Bot
 
-**DJ Sage** is a powerful and feature-rich Discord bot built using Java and the JDA (Java Discord API). It enhances your Discord server with advanced administrative tools, interactive fun commands, event scheduling, reaction roles, user analytics, and an engaging treasure hunt feature.
+**DJ Sage** is a powerful Discord bot built using Java and JDA (Java Discord API). It offers a variety of commands for server moderation, fun activities, event management, user analytics, and more.
 
-## 🛠️ Features
+## Features
 
-### 🎛️ Admin Commands
-- **Mute/Unmute**: Manage user participation in voice channels.
-- **Kick/Ban**: Remove disruptive members from the server.
-- **Clear Messages**: Bulk delete messages from channels for moderation.
+- **Admin Commands**: Manage your server with ease using commands like mute, unmute, kick, ban, and message clearing.
+- **Fun Commands**: Engage users with games such as dice roll, trivia, coin toss, and Rock, Paper, Scissors.
+- **Treasure Hunt**: Organize treasure hunts with dynamic clues and leaderboards.
+- **Reaction Roles**: Allow users to self-assign roles by reacting to messages.
+- **Event Scheduler**: Schedule events, set reminders, and view upcoming events.
+- **User Analytics**: Track user activity, statistics, and generate reports for server admins.
 
-### 🎉 Fun Commands
-- **Roll Dice**: Simulate rolling a dice.
-- **Trivia**: Challenge users with trivia questions.
-- **Random Fact**: Share interesting facts.
-- **Coin Toss**: Flip a coin for random outcomes.
-- **Jokes**: Tell a variety of jokes.
-- **Choose**: Let the bot make choices from provided options.
-- **Rock, Paper, Scissors**: Play the classic game against the bot.
+## Installation
 
-### 🏆 Treasure Hunt
-- **Start Hunt**: Initiate a new treasure hunt.
-- **Get Clue**: Retrieve the current clue.
-- **Submit Answer**: Submit answers to clues.
-- **View Leaderboard**: Display the top participants.
-- **Hint**: Request hints for difficult clues.
-- **End Hunt**: Conclude the treasure hunt.
-- **My Progress**: Check individual progress in the hunt.
-
-### 🎭 Reaction Roles
-- **Setup Reaction Role**: Assign roles based on message reactions with customizable emojis and images.
-- **Remove Reaction Role Setup**: Remove existing reaction role configurations.
-- **Assign/Remove Role**: Self-assign or remove roles.
-- **List Roles**: Display all available roles in the server.
-
-### 📊 User Analytics
-- **User Stats**: Retrieve statistics for individual users.
-- **Top Active Users**: Display the most active members.
-- **User Activity**: View detailed activity logs.
-- **Clear User Stats**: Reset all user statistics.
-- **Track Message**: Monitor the number of messages sent by users.
-
-### 📅 Event Scheduler
-- **Schedule Event**: Create and schedule new events.
-- **View Events**: List all upcoming events.
-- **Cancel Event**: Remove scheduled events.
-- **Remind Event**: Set reminders for specific events.
-- **Event Info**: Get detailed information about an event.
-
-## 🚀 Installation
-
-### Prerequisites
-- **Java 8** or higher
-- **Maven** or **Gradle** for dependency management
-- **MongoDB** instance for database operations
-
-### Steps
-
-1. **Clone the Repository**
+1. Clone the repository:
     ```bash
     git clone https://github.com/yourusername/DJSage.git
-    cd DJSage
     ```
 
-2. **Install Dependencies**
-    - If using **Maven**:
-        ```bash
-        mvn clean install
-        ```
-    - If using **Gradle**:
-        ```bash
-        gradle build
-        ```
+2. Install dependencies with Maven.
 
-3. **Configure the Bot**
-    - Open `DJBot.java` and replace the placeholder token with your actual Discord bot token:
-        ```java
-        private static final String TOKEN = "YOUR_BOT_TOKEN_HERE";
-        ```
+3. Add your Discord bot token to the `DJBot.java` file:
+    ```java
+    private static final String TOKEN = "YOUR_BOT_TOKEN";
+    ```
 
-4. **Set Up MongoDB**
-    - Ensure MongoDB is running and accessible.
-    - Configure the MongoDB URI in `MongoManager.java`:
-        ```java
-        String uri = "mongodb://localhost:27017"; // Update with your MongoDB URI
-        ```
+4. Run the bot using:
+    ```bash
+    mvn clean package
+    java -jar target/DJSageBot.jar
+    ```
 
-5. **Run the Bot**
-    - Execute the JAR file:
-        ```bash
-        java -jar target/DJSageBot.jar
-        ```
+## MongoDB Setup
 
-## ⚙️ Configuration
+The bot uses MongoDB to store user statistics, event data, and treasure hunt progress. Ensure you have MongoDB installed and configure your connection in `MongoManager.java`.
 
-- **Bot Token**: Securely store your Discord bot token and never expose it publicly.
-- **MongoDB URI**: Ensure your MongoDB instance is correctly configured and accessible.
-- **Permissions**: Assign necessary permissions to the bot in your Discord server for optimal functionality.
+## Commands Overview
 
-## 📚 Usage
+- **Admin Commands**: `mute`, `unmute`, `kick`, `ban`, `clear`
+- **Fun Commands**: `roll-dice`, `trivia`, `random-fact`, `coin-toss`, `rps`
+- **Treasure Hunt**: `start-hunt`, `get-clue`, `submit-answer`, `view-leaderboard`
+- **Reaction Roles**: `reaction-role-setup`, `assign-role`, `remove-role`
+- **Event Scheduler**: `schedule-event`, `view-events`, `cancel-event`, `remind-event`
+- **User Analytics**: `user-stats`, `top-active-users`, `track-message`
 
-Once the bot is running and added to your Discord server, you can interact with it using the registered slash commands. Type `/` in your Discord server to see the list of available commands.
+## Contributing
 
-### Example Commands
+Feel free to contribute by submitting pull requests or opening issues. Make sure to follow the project's coding standards and include clear commit messages.
 
-- `/roll-dice` – Roll a dice.
-- `/trivia` – Ask a trivia question.
-- `/mute @user` – Mute a user.
-- `/reaction-role-setup` – Setup a reaction role with custom emoji and image.
+## License
 
-## 🗄️ MongoDB Collections
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- **users**: Store user information and statistics.
-- **commands**: Track custom commands and configurations.
-- **reaction_roles**: Manage reaction role settings.
-- **treasure_hunts**: Monitor active treasure hunts and participant progress.
-- **events**: Handle scheduled events and reminders.
-- **analytics**: Collect and analyze user activity data.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code follows the project's coding standards and includes relevant documentation.
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## 📞 Support
-
-If you encounter any issues or have questions, feel free to open an issue on the [GitHub repository](https://github.com/yourusername/DJSage/issues) or contact the maintainer directly.
-
----
-
-**Enjoy using DJ Sage Bot to enhance your Discord server experience!** 🎶🤖
